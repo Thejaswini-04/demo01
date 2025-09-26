@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<table>
+    <tr>
+        <th>User</th><th>Blood Type</th><th>Units</th><th>Type</th><th>Status</th><th>Actions</th><th>Date</th>
+    </tr>
+    {% for req in requests %}
+    <tr>
+        <td>{{ req[1] }}</td>
+        <td>{{ req[2] }}</td>
+        <td>{{ req[3] }}</td>
+        <td>{{ req[4] }}</td>
+        <td>{{ req[5] }}</td>
+        <td>
+            {% if req[5] == 'Pending' %}
+            <a href="{{ url_for('update_request', request_id=req[0], action='approve') }}">Approve</a>
+            <a href="{{ url_for('update_request', request_id=req[0], action='reject') }}">Reject</a>
+            {% else %}
+                {{ req[5] }}
+            {% endif %}
+        </td>
+        <td>{{ req[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

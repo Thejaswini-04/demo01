@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Blood Bank Management</h1>
+        <p class="hero-subtitle">Saving lives through blood donation</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">{{ stock|sum(attribute=1) }}</span>
+                <span class="stat-label">Total Units</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Blood Types</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Available</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="stock-section">
+    <h2 class="section-title">Current Blood Stock</h2>
+    <div class="stock-grid">
+        {% for b in stock %}
+        <div class="blood-card">
+            <div class="blood-type">{{ b[0] }}</div>
+            <div class="blood-units">{{ b[1] }}</div>
+            <div class="units-label">Units Available</div>
+            {% if b[1] >= 10 %}
+                <span class="status-indicator status-high">High Stock</span>
+            {% elif b[1] >= 5 %}
+                <span class="status-indicator status-medium">Medium Stock</span>
+            {% else %}
+                <span class="status-indicator status-low">Low Stock</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

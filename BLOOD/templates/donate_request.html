@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Donate / Request Blood</h2>
+<form method="POST">
+    <label>Blood Type:</label>
+    <select name="blood_type" required>
+        {% for bt in ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] %}
+        <option value="{{ bt }}">{{ bt }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Units:</label>
+    <input name="units" type="number" min="1" required>
+
+    <label>Action:</label>
+    <select name="action_type" required>
+        <option value="Donate">Donate</option>
+        <option value="Request">Request</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

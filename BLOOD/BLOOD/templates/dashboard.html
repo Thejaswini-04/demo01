@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard-welcome">
+    <h1 class="welcome-title">Welcome to Your Dashboard</h1>
+    <p class="welcome-text">Manage your blood donations and requests</p>
+    <a href="{{ url_for('donate_request') }}" class="action-button">Donate / Request Blood</a>
+</div>
+
+{% if user_requests %}
+<div class="history-section">
+    <h2 class="section-title">Your Request History</h2>
+    <div class="history-grid">
+        {% for req in user_requests %}
+        <div class="history-card">
+            <div class="history-header">
+                <span class="history-type {{ req[3]|lower }}">{{ req[3] }}</span>
+                <span class="history-status {{ req[4]|lower }}">{{ req[4] }}</span>
+            </div>
+            <div class="history-details">
+                <div class="history-detail">
+                    <strong>Blood Type:</strong> {{ req[1] }}
+                </div>
+                <div class="history-detail">
+                    <strong>Units:</strong> {{ req[2] }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<div class="history-section">
+    <h2 class="section-title">No History Yet</h2>
+    <p style="text-align: center; color: #666;">You haven't made any donations or requests yet. Click the button above to get started!</p>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,364 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background-color: #b30000;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #b30000;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #800000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+.flash-container {
+    text-align: center;
+}
+
+.flash {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+.flash.success { background-color: #d4edda; color: #155724; }
+.flash.info { background-color: #cce5ff; color: #004085; }
+.flash.danger { background-color: #f8d7da; color: #721c24; }
+
+/* Add these styles to your existing style.css file */
+
+/* Enhanced Home Page Styles */
+.hero-section {
+    background: linear-gradient(135deg, #b30000, #dc2626);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin: -20px -20px 30px -20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,0 1000,100 0,80"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    margin: 0 0 20px 0;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Blood Stock Table Enhancement */
+.stock-section {
+    margin-top: 40px;
+}
+
+.section-title {
+    color: #b30000;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background: #b30000;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stock-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.blood-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.blood-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #b30000, #dc2626);
+}
+
+.blood-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(179,0,0,0.2);
+    border-color: #b30000;
+}
+
+.blood-type {
+    font-size: 2em;
+    font-weight: bold;
+    color: #b30000;
+    margin-bottom: 10px;
+}
+
+.blood-units {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.units-label {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.status-indicator {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.status-high { background: #d4edda; color: #155724; }
+.status-medium { background: #fff3cd; color: #856404; }
+.status-low { background: #f8d7da; color: #721c24; }
+
+/* Dashboard Enhancement */
+.dashboard-welcome {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 30px;
+    border: 1px solid #dee2e6;
+}
+
+.welcome-title {
+    color: #b30000;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #b30000, #dc2626);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(179,0,0,0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(179,0,0,0.3);
+    background: linear-gradient(135deg, #dc2626, #b30000);
+}
+
+.history-section {
+    margin-top: 40px;
+}
+
+.history-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.history-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 4px solid #b30000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.history-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.history-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.history-type {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.history-type.donate { color: #28a745; }
+.history-type.request { color: #dc3545; }
+
+.history-status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.history-status.pending { background: #fff3cd; color: #856404; }
+.history-status.approved { background: #d4edda; color: #155724; }
+.history-status.rejected { background: #f8d7da; color: #721c24; }
+
+.history-details {
+    color: #666;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.history-detail {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-stats {
+        gap: 20px;
+    }
+    
+    .stock-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    .blood-card {
+        padding: 20px;
+    }
+    
+    .hero-title {
+        font-size: 2em;
+    }
+    
+    .history-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
